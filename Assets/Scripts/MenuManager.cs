@@ -1,13 +1,13 @@
-using UnityEngine;                  // ¤Ş¥Î Unity ¤ŞÀº¨ç¦¡®w
+ï»¿using UnityEngine;                  // å¼•ç”¨ Unity å¼•æ“å‡½å¼åº«
 using UnityEngine.SceneManagement;
 
-// ¸}¥»¦WºÙ¡G¥²¶·¸ò¥ª¤W¨¤ªºÀÉ®×¦WºÙ¤@¼Ë¡A¥]§t¤j¤p¼g¡A¤£¯à¦³ªÅ®æ
+// è…³æœ¬åç¨±ï¼šå¿…é ˆè·Ÿå·¦ä¸Šè§’çš„æª”æ¡ˆåç¨±ä¸€æ¨£ï¼ŒåŒ…å«å¤§å°å¯«ï¼Œä¸èƒ½æœ‰ç©ºæ ¼
 public class MenuManager : MonoBehaviour
 {
-    // ¸}¥»µ{¦¡¤º®e
+    // è…³æœ¬ç¨‹å¼å…§å®¹
     public void StartGame()
     {
-        SceneManager.LoadScene("¹CÀ¸³õ´º");
+        SceneManager.LoadScene("éŠæˆ²å ´æ™¯");
     }
 
     public void QuitGame()
