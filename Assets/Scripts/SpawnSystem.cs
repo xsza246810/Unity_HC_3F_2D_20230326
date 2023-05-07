@@ -6,4 +6,14 @@ public class SpawnSystem : MonoBehaviour
     public float interval = 3.5f;
     [Header("怪物預製物")]
     public GameObject prefabEnemy;
+
+    private void SpawnEnemy()
+    {
+        Instantiate(prefabEnemy, transform.position, transform.rotation);
+    }
+
+    private void Awake()
+    {
+        InvokeRepeating("SpawnEnemy", 0, interval);
+    }
 }
