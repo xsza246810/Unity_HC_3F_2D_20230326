@@ -17,10 +17,8 @@ public class DamageSystem : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // print(collision.gameObject);
         if (collision.gameObject.name.Contains("武器"))
         {
-            //print("被武器打到~");
             GetDamage();
         }
     }
@@ -28,7 +26,6 @@ public class DamageSystem : MonoBehaviour
     private void GetDamage()
     {
         hp -= 50;
-        // print("血量剩下：" + hp);
 
         if (hp <= 0) Dead();
     }

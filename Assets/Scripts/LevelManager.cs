@@ -8,6 +8,8 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI textLv;
     public TextMeshProUGUI textExp;
     public Image imgExp;
+    [Header("等級上限"), Range(0, 500)]
+    public int lvMax = 100;
 
     private int lv = 1;
     private float exp;
@@ -17,9 +19,9 @@ public class LevelManager : MonoBehaviour
     [ContextMenu("更新經驗值需求表")]
     private void UpdateExpNeeds()
     {
-        expNeeds = new float[100];
+        expNeeds = new float[lvMax];
 
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < lvMax; i++)
         {
             expNeeds[i] = (i + 1) * 100;
         }
@@ -33,5 +35,16 @@ public class LevelManager : MonoBehaviour
     {
         exp += getExp;
         print($"<color=yellow>當前經驗值：{ exp }</color>");
+
+        // 如果 經驗值 >= 當前等級需求 並且 等級 < 等級上限 就 升級
+        if (exp >= expNeeds[lv - 1] && lv < lvMax)
+        {
+            exp -= expNeeds[lv - 1];        // 計算多出來的經驗
+            lv++;                           // 等級提升 (+1)
+            textLv.text = $"Lv {lv}";       // 更新等級介面
+        }
+
+        textExp.text = $"{exp} / {expNeeds[lv - 1]}";
+        imgExp.fillAmount = exp / expNeeds[lv - 1];
     }
 }

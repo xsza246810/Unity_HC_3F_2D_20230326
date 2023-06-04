@@ -136,3 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04cf868d4539c294a94c4fe563c331d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameTarget: "\u7280\u725B"
+  moveSpeed: 3
+  eatDistance: 0.6
+  exp: 30
