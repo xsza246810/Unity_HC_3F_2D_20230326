@@ -20,8 +20,8 @@ public class LevelManager : MonoBehaviour
     public GameObject goLevelUp;
     [Header("技能選取區塊1~3")]
     public GameObject[] goChooseSkills;
-    [header("全部技能")]
-    private DataSkill[] dataSkills;
+    [Header("全部技能")]
+    public DataSkill[] dataSkills;
 
     [ContextMenu("更新經驗值需求表")]
     private void UpdateExpNeeds()
@@ -49,7 +49,7 @@ public class LevelManager : MonoBehaviour
             exp -= expNeeds[lv - 1];        // 計算多出來的經驗
             lv++;                           // 等級提升 (+1)
             textLv.text = $"Lv {lv}";       // 更新等級介面
-            Levelup()
+            Levelup();
         }
 
         textExp.text = $"{exp} / {expNeeds[lv - 1]}";
