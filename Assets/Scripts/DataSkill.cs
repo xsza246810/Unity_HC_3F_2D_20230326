@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "KID/Data Skill")]
-public class NewBehaviourScript : ScriptableObject
+public class DataSkill: ScriptableObject
 {
     [Header("§Þ¯à¦WºÙ")]
     public string nameSkill;
